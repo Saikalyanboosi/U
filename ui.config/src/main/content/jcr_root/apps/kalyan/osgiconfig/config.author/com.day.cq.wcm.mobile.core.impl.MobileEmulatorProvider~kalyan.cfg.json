@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "kalyan/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

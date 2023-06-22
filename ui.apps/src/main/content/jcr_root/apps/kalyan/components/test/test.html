@@ -1,0 +1,36 @@
+<div data-sly-use.kvm="com.adobe.aem.guides.kalyan.core.models.Slingmodel"></div>
+<h2>Name :${kvm.name}</h2>
+<h2>RollNumber :${kvm.rollnumber}</h2>
+<h2>Describe your self: ${kvm.text @context='html'}</h2>
+<img src="${kvm.pic}" alt="Image" />
+<h2>Country :${kvm.country}</h2>
+<h2>Gender :${kvm.gender}</h2>
+<h2>select :${kvm.select}</h2>
+<h2>Path :${kvm.path}</h2>
+<h2>Parent :${kvm.parentNodeName}</h2>
+<sly data-sly-list.obj="${kvm.multiChildNodes}">
+${obj.zipcode}<br>
+${obj.fullname}<br>
+${obj.presentaddress}<br>
+${obj.district}</sly>
+<h2>Fname :${kvm.fname}</h2>
+<h2>Empid :${kvm.empid}</h2>
+<img src="${kvm.image}" alt="Image" />
+
+<sly data-sly-list.obe="${kvm.nestedChildNodes}">
+BookName :${obe.bookname}<br>
+Subject :${obe.booksubject}<br>
+EditionDate:${ 'yyyy-MM-dd'@format=obe.editondate}<br>
+Bookedition :${obe.bookediton}<br>
+CollageName :${obe.collagename}<br>
+Department :${obe.department}<br>
+Gender :${obe.gender}<br>
+AcadamicYear :${obe.year}
+</sly>
+
+
+
+
+
+
+
