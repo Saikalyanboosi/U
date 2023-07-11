@@ -142,7 +142,7 @@ public class Slingmodel{
 			  
 			  //SUB CHILD
 			
-			  Resource subchildResource = item1.getChild("bookeditons");
+		 	  Resource subchildResource = item1.getChild("bookeditons");
 			  LOG.info("childResourceName:"+subchildResource.getName());
 			  Iterator<Resource> item2 = subchildResource.listChildren();
 			  

@@ -20,30 +20,31 @@ import com.day.cq.wcm.api.PageManager;
 @Component(service=Servlet.class)
 @SlingServletResourceTypes(resourceTypes= {"kalyan/components/page","foundation/components/redirect"},
                            selectors= {"add","surge","sub"},
-                           extensions= {"txt","json","xml"})
+                           extensions= {"txt","json","miks"})
 public class Kalyanservlet  extends SlingAllMethodsServlet{
-	
 	protected void doGet(SlingHttpServletRequest req,SlingHttpServletResponse res) throws IOException
 	{
-		String pagepath= req.getParameter("pagepath");
+		String pagepath = req.getParameter("pagepath");
 		if(pagepath==null)
 		{
 			pagepath="/content/kalyan/us/en/page2";
 		}
 		ResourceResolver rrr = req.getResourceResolver();
-		PageManager pg = rrr.adaptTo(PageManager.class);
-		Page page = pg.getPage(pagepath);
-		Iterator<Page> childs = page.listChildren();
+		PageManager pageManager = rrr.adaptTo(PageManager.class);
+		Page page = pageManager.getPage(pagepath);
+		Iterator<Page> childss = page.listChildren();
 		JsonArrayBuilder jab = Json.createArrayBuilder();
-		while(childs.hasNext());
+		while(childss.hasNext());
 		{
 			JsonObjectBuilder job = Json.createObjectBuilder();
-			Page next = childs.next();
-			job.add("title", next.getTitle());
+			Page next = childss.next();
+			job.add("title",next.getTitle());
 			job.add("path",next.getPath());
 			jab.add(job);
 		}
 		res.getWriter().write(jab.build().toString());
 	}
+	
+
 
 }

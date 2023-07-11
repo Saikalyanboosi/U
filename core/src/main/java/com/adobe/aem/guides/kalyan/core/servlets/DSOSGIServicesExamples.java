@@ -20,7 +20,7 @@ import org.osgi.service.component.annotations.Component;
 import com.day.cq.wcm.api.Page;
 
 @Component(service=Servlet.class)
-@SlingServletResourceTypes(resourceTypes= {"projectM/components/page","foundation/components/redirect"},
+@SlingServletResourceTypes(resourceTypes= {"kalyan/components/page","foundation/components/redirect"},
                            selectors= {"add","sub","surge"},
                             extensions= {"txt","json","xml"})
 @SlingServletPaths(value="/bin/demo/recent")

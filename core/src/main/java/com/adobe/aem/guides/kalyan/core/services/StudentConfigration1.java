@@ -18,7 +18,7 @@ public @interface StudentConfigration1 {
 			             type=AttributeType.INTEGER,
 			             description="enter Rollnumber here")
 	public int getRollNumber() default 3;
-	
+	  
 	@AttributeDefinition(name="Regular",
 			             type=AttributeType.BOOLEAN,
 			             description="is student is Regular")
